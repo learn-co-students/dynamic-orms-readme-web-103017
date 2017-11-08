@@ -19,13 +19,13 @@ class Song
       column_names << row["name"]
     end
     column_names.compact
-  end
+  end #
 
   self.column_names.each do |col_name|
     attr_accessor col_name.to_sym
-  end
+  end # creating accessors for the class
 
-  def initialize(options={})
+  def initialize(options={}) # default to empty hash
     options.each do |property, value|
       self.send("#{property}=", value)
     end
@@ -59,6 +59,3 @@ class Song
   end
 
 end
-
-
-
